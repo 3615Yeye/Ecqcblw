@@ -1,0 +1,49 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Int\u00e9gration de estcequecestbientotleweekend.fr",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 7.6.0-8.7.99\n",
+            "disableLocalization": true,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": true,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "7.6.0-7.6.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "ecqcblw",
+        "name": "Ecqcblw",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "",
+                "email": "r.lepivaingt@gmail.com",
+                "name": "Ronan Le Pivaingt",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Ecqcblw => show",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "ecqcblw",
+                "name": "Est-ce que c'est bient\u00f4t le week-end"
+            }
+        ],
+        "vendorName": "Yeye"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2018-04-19 11:48",
+        "extension_builder_version": "7.6.18",
+        "be_user": " (2)"
+    }
+}

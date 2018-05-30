@@ -1,0 +1,14 @@
+<script src="/typo3conf/ext/ecqcblw/Resources/Public/js/mousetrap.min.js"></script>
+<script>
+    Mousetrap.bind('up up down down left right left right b a', function() {
+        console.log("C'est parti");
+        $.get("http://estcequecestbientotleweekend.fr/", function( data ) {
+            console.log("C'est arrivé");
+            console.log(data);
+        });
+        $.get("https://yesno.wtf/api", function( data ) {
+            console.log("C'est arrivé 2");
+            console.log(data);
+        });
+    });
+</script>
