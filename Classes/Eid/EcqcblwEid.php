@@ -23,15 +23,19 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-// use TYPO3\CMS\Core\Utility\GeneralUtility;
-// use TYPO3\CMS\Core\Utility\HttpUtility;
+require(PATH_typo3conf . "ext/ecqcblw/Resources/Private/PHP/weekend-website/Weekend.php");
 
-// header(HttpUtility::HTTP_STATUS_400);
+$weekend = new Weekend();
+
 header('Content-Type: application/json; charset=utf-8');
 
-$response = file_get_contents('http://estcequecestbientotleweekend.fr/api');
-$response = json_decode($response);
+$response = [
+    'text' => $weekend->getText(),
+    'subtext' => $weekend->getSubText(),
+    'is_weekend' => $weekend->isWeekend()
+];
 
-echo file_get_contents('http://estcequecestbientotleweekend.fr/api');
+echo json_encode($response);
+
 
 exit();

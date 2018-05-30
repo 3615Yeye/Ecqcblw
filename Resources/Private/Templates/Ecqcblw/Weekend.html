@@ -1,14 +1,46 @@
 <script src="/typo3conf/ext/ecqcblw/Resources/Public/js/mousetrap.min.js"></script>
 <script>
     Mousetrap.bind('up up down down left right left right b a', function() {
-        console.log("C'est parti");
-        $.get("http://estcequecestbientotleweekend.fr/", function( data ) {
-            console.log("C'est arrivé");
-            console.log(data);
-        });
-        $.get("https://yesno.wtf/api", function( data ) {
-            console.log("C'est arrivé 2");
-            console.log(data);
+        // Fait appel à l'API est-ce que c'est bientôt le weekend intégré dans l'extension
+        $.get("/index.php?eID=ecqcblw", function( data ) {
+            var is_weekend = data.is_weekend ? "yes" : "no";
+
+            // is_weekend = "yes";
+
+            $.get("https://yesno.wtf/api/?force=" + is_weekend, function( data ) {
+                console.log(data);
+
+                $.magnificPopup.open({
+                    items: {
+                        src: data.image,
+                        titleSrc: data.text
+                    },
+                    type: 'image',
+                    mainClass: 'mfp-ecqcblw',
+                });
+            });
         });
     });
 </script>
+
+<style>
+.mfp-ecqcblw .mfp-content {
+    width: 50%;
+    height: 50%;
+}
+.mfp-ecqcblw .mfp-figure::after {
+    box-shadow: none;
+    background: none;
+}
+.mfp-ecqcblw .mfp-figure, .mfp-ecqcblw figure, .mfp-ecqcblw img {
+    height: 100%;
+}
+.mfp-ecqcblw img {
+    border-radius: 50%;
+}
+.mfp-ecqcblw .mfp-figure::before {
+    content: "Est-ce que c'est bientôt le weekend ?";
+    color: white;
+    font-size: 2rem;
+}
+</style>
