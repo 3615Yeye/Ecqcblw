@@ -1,4 +1,3 @@
-
 plugin.tx_ecqcblw_ecqcblw {
   view {
     templateRootPaths.0 = EXT:ecqcblw/Resources/Private/Templates/
@@ -53,6 +52,7 @@ plugin.tx_ecqcblw._CSS_DEFAULT_STYLE (
     }
 )
 
+# Force l'affichage du plugin dans le slot 42 de la création d'une page dès le moment où le gabarit typoscript est inclut
 lib.ecqcblw = USER
 lib.ecqcblw {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
@@ -62,5 +62,15 @@ lib.ecqcblw {
     controller = Ecqcblw
     action = weekend
 }
-
 page.42 < lib.ecqcblw
+
+# Inclusion des fichiers CSS et JS
+page.includeCSS {
+  ecqcblw = EXT:ecqcblw/Resources/Public/css/ecqcblw.css
+}
+page.includeJSFooterlibs {
+  mousetrap = EXT:ecqcblw/Resources/Public/js/mousetrap.min.js
+}
+page.includeJSFooter {
+  ecqcblw = EXT:ecqcblw/Resources/Public/js/ecqcblw.js
+}

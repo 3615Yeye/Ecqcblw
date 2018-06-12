@@ -1,0 +1,109 @@
+/* 
+ * Style du popup
+ */
+.mfp-ecqcblw .mfp-content {
+    width: 50%;
+    height: 50%;
+}
+.mfp-ecqcblw .mfp-figure::after {
+    box-shadow: none;
+    background: none;
+}
+.mfp-ecqcblw .mfp-figure, .mfp-ecqcblw figure, .mfp-ecqcblw img {
+    height: 100%;
+}
+.mfp-ecqcblw p.titre {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.mfp-ecqcblw img {
+    border-radius: 50%;
+}
+.mfp-ecqcblw p.reponse {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/*
+ * Animation
+ */
+/* overlay at start */
+.mfp-ecqcblw.mfp-bg .mfp-content {
+	opacity: 0;
+
+	-webkit-transition: all 0.30s ease-out;
+	-moz-transition: all 0.30s ease-out;
+	transition: all 0.30s ease-out;
+}
+/* overlay animate in */
+.mfp-ecqcblw.mfp-bg.mfp-ready .mfp-content {
+	opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-ecqcblw.mfp-bg.mfp-removing .mfp-content {
+	opacity: 0;
+}
+
+/* content at start */
+.mfp-ecqcblw.mfp-wrap .mfp-content {
+	opacity: 0;
+	transform: translate3d(0, -3000px, 0);
+
+	-webkit-transition: all 0.30s ease-out;
+	-moz-transition: all 0.30s ease-out;
+	transition: all 0.30s ease-out;
+}
+/* content animate it */
+.mfp-ecqcblw.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+	transform: translate3d(0, 0px, 0);
+}
+/* content animate out */
+.mfp-ecqcblw.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+	transform: translate3d(0, 2000px, 0);
+}
+
+/* Animation pour la réponse */
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+	opacity: 0;
+  }
+
+  10%,
+  20% {
+    transform: scale3d(0.8, 0.8, -1.9) rotate3d(0, 0, 2, -6deg);
+	opacity: 0.6;
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1.2, 1.2, 1.2) rotate3d(0, 0, 2, 6deg);
+	opacity: 1;
+  }
+
+  40%,
+  60%,
+  80% {
+    transform: scale3d(1.2, 1.2, 1.2) rotate3d(0, 0, 2, -6deg);
+	opacity: 1;
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+	opacity: 1;
+  }
+}
+.tada {
+  animation-name: tada;
+  animation-duration: 2s;
+}
