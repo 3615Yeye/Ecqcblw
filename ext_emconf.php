@@ -11,17 +11,17 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Ecqcblw',
+    'title' => 'ecqcblw',
     'description' => 'Intégration de estcequecestbientotleweekend.fr',
     'category' => 'plugin',
     'author' => 'Ronan Le Pivaingt',
     'author_email' => 'r.lepivaingt@gmail.com',
-    'state' => 'alpha',
+    'state' => 'beta',
     'internal' => '',
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '1.0.0',
+    'version' => '1.0.1',
     'constraints' => [
         'depends' => [
             'typo3' => '7.6.0-8.7.99',
